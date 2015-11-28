@@ -1,12 +1,15 @@
-type struct Node* link
+typedef struct Node Link;
 
 struct Node
 {
 	int Value;
-	link LinkNode;	
-}
+	Link* LinkNode;	
+};
 
-void InsertNode(int Value)
+Link* InitNode(int Value);
 
-void DeleteNode(void)
+void InsertNode(int Value, Link* HeadNode);
 
+//void DeleteNode(Link* HeadNode);
+
+void Show(Link* HeadNode);
