@@ -8,7 +8,7 @@ struct Node
 
 Link* InitNode(int Value);
 
-void InsertNode(int Value, Link* HeadNode);
+void InsertNode(int Value, Link** HeadNode);
 
 //void DeleteNode(Link* HeadNode);
 
