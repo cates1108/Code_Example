@@ -18,24 +18,29 @@ Link* InitNode(int Value)
 }
 
 
-void InsertNode(int Value,Link* HeadNode)
+void InsertNode(int Value,Link** HeadNode)
 {
+	Link* temp = *HeadNode;
+
 
 	if(HeadNode == NULL)
 	{
-		HeadNode = (Link*)malloc(sizeof(Link));
+		printf("HeadNode Null..create..\n");
+		temp = (Link*)malloc(sizeof(Link));
 	
-		HeadNode->Value = Value;
-		HeadNode->LinkNode = NULL;
+		temp->Value = Value;
+		temp->LinkNode = NULL;
 	}
 	else
 	{		
-		Link* temp = NULL;
-		
-		temp = (Link*)malloc(sizeof(Link));
-		temp->Value = Value;
-		temp->LinkNode = NULL;			
-		HeadNode = temp;
+		printf("create node..\n");
+		Link* temp2;
+
+		temp2 = (Link*)malloc(sizeof(Link));
+		temp2->Value = Value;
+		temp2->LinkNode = NULL;
+		temp->LinkNode = temp2;
+		*HeadNode = temp2;
 	}
 }
 
