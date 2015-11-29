@@ -38,12 +38,12 @@ void InsertNode(int Value,Link* HeadNode)
 		HeadNode = temp;
 	}
 }
-/*
+
 void DeleteNode(void)
 {
 
 }
-
+/*
 int _GetNodeNum(Link root)
 {
 	Link temp;
