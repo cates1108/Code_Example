@@ -44,7 +44,7 @@ void InsertNode(int Value,Link** HeadNode)
 	}
 }
 
-void DeleteNode(void)
+void DeleteNode(Link** Head)
 {
 
 }
