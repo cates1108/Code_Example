@@ -20,28 +20,16 @@ Link* InitNode(int Value)
 
 void InsertNode(int Value,Link** HeadNode)
 {
-	Link* temp = *HeadNode;
+	Link* temp;
 
+	printf("create node..\n");
 
-	if(HeadNode == NULL)
-	{
-		printf("HeadNode Null..create..\n");
-		temp = (Link*)malloc(sizeof(Link));
+	temp = (Link*)malloc(sizeof(Link));
+	temp->Value = Value;
+	temp->LinkNode = NULL;
+	(*HeadNode)->LinkNode = temp;
+	*HeadNode = temp;
 	
-		temp->Value = Value;
-		temp->LinkNode = NULL;
-	}
-	else
-	{		
-		printf("create node..\n");
-		Link* temp2;
-
-		temp2 = (Link*)malloc(sizeof(Link));
-		temp2->Value = Value;
-		temp2->LinkNode = NULL;
-		temp->LinkNode = temp2;
-		*HeadNode = temp2;
-	}
 }
 
 void DeleteNode(Link** Head)
@@ -63,7 +51,7 @@ int _GetNodeNum(Link root)
 	retunr count;
 }
 */
-void show(Link* root)
+void Show(Link* root)
 {
 	//int count = _GetNodeNum(root)	
 	Link* temp = root;
