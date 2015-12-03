@@ -21,20 +21,36 @@ Link* InitNode(int Value)
 void InsertNode(int Value,Link** HeadNode)
 {
 	Link* temp;
+	Link* last_node;
+
+	last_node = *HeadNode;
+	while(last_node->LinkNode!=NULL)
+		last_node = last_node->LinkNode;
 
 	printf("create node..\n");
-
+	
 	temp = (Link*)malloc(sizeof(Link));
 	temp->Value = Value;
 	temp->LinkNode = NULL;
-	(*HeadNode)->LinkNode = temp;
-	*HeadNode = temp;
+	last_node->LinkNode = temp;
+	//*HeadNode = temp;
 	
 }
 
 void DeleteNode(Link** Head)
 {
+	Link* last_node;
+	Link* pre_node;
+	last_node = *Head;
 
+	while(last_node->LinkNode!=NULL)
+	{
+		pre_node = last_node;
+		last_node = last_node->LinkNode;
+	}
+	
+	pre_node->LinkNode = NULL;
+	free(last_node);
 }
 /*
 int _GetNodeNum(Link root)
